@@ -1,0 +1,211 @@
+/* Global styles for dark theme */
+body, .App {
+  background-color: #121212; /* Dark background */
+  color: #E0E0E0; /* Light text color */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header Styles */
+.App-header {
+  background-color: #1E1E1E; /* Darker header background */
+  color: #E0E0E0; /* Light header text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+/* Table wrapper that allows scrolling */
+.table-wrapper {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  max-width: 100%; /* Ensure it takes up full width */
+  position: relative; /* Required for sticky positioning to work properly */
+}
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  background-color: #1E1E1E; /* Dark background for the table */
+  color: #E0E0E0; /* Light text for table */
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Adjust column widths */
+th, td {
+  padding: 14px 20px;
+  border: 1px solid #333; /* Darker border */
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Set smaller column widths for specific columns */
+th.symbol, td.symbol {
+  min-width: 80px; /* Smaller width for Symbol */
+}
+
+th.type, td.type {
+  min-width: 100px; /* Adjusted width for Type */
+}
+
+th.direction, td.direction {
+  min-width: 80px; /* Adjusted width for Direction */
+}
+
+th.level, td.level {
+  min-width: 80px; /* Adjusted width for Level */
+}
+
+th.fire-date, td.fire-date {
+  min-width: 150px; /* Fire Date might need more space */
+}
+
+th.note, td.note {
+  min-width: 200px; /* Allow more space for Notes */
+}
+
+th.created, td.created {
+  min-width: 150px; /* Adjust width for Created Date */
+}
+
+/* Sticky header for the table */
+th {
+  position: sticky; /* Sticky position */
+  top: 0; /* Stick to the top when scrolling */
+  background-color: #333; /* Background color for the header */
+  color: white; /* Text color for the header */
+  z-index: 2; /* Ensure the header stays on top of the table body */
+  white-space: nowrap; /* Prevent headers from wrapping */
+}
+
+/* Ensure even row colors */
+tr:nth-child(even) {
+  background-color: #222; /* Darker shade for even rows */
+}
+
+tr:hover {
+  background-color: #444; /* Highlight row on hover */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Media query for handling small screens */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto; /* Ensure horizontal scrolling on smaller screens */
+  }
+
+  table {
+    width: 100%; /* Ensure the table takes up full width */
+  }
+
+  th, td {
+    min-width: 120px; /* Ensure minimum column width */
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  /* Set smaller widths for mobile */
+  th.symbol, td.symbol {
+    min-width: 60px; /* Smaller width for Symbol */
+  }
+
+  th.type, td.type {
+    min-width: 80px; /* Adjusted width for Type */
+  }
+
+  th.direction, td.direction {
+    min-width: 60px; /* Adjusted width for Direction */
+  }
+
+  th.level, td.level {
+    min-width: 70px; /* Adjusted width for Level */
+  }
+
+  th.note, td.note {
+    min-width: 150px; /* Allow more space for Notes on mobile */
+  }
+}
+
+/* Input fields inside table cells */
+td input {
+  background-color: #333; /* Dark input background */
+  color: #E0E0E0; /* Light text inside input */
+  border: none;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+td input:focus {
+  outline: none;
+  background-color: #444; /* Slightly lighter background on focus */
+}
+
+/* Button Styles */
+button {
+  background-color: #4a90e2; /* Blue color for buttons */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #357ABD;
+}
+
+/* Input fields for the form */
+.form-input, .form-select {
+  background-color: #333; /* Dark background for form inputs */
+  color: #E0E0E0; /* Light text */
+  border: 1px solid #555; /* Darker border */
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.form-select {
+  appearance: none;
+}
+
+.form-button {
+  background-color: #4a90e2;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #357ABD;
+}
+
+/* Custom Scrollbar Styling for Dark Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
